@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF- दुनियाभर">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="js/java.js">  Removed, as JS file content was not provided for styling review -->
+    <title>MIDAS</title>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burgerButton = document.getElementById('burgerButton');
+        const mainNav = document.getElementById('mainNav');
+        const body = document.body;
+
+        if (burgerButton && mainNav) {
+            burgerButton.addEventListener('click', function () {
+                burgerButton.classList.toggle('is-active');
+                mainNav.classList.toggle('is-active'); 
+                body.classList.toggle('no-scroll'); // Блокировка/разблокировка скролла
+
+                // Управление aria-expanded для доступности
+                const isExpanded = burgerButton.getAttribute('aria-expanded') === 'true' || false;
+                burgerButton.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
+    });
+</script>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="header-logo">
+                <img src="img/MIDAs.svg" alt="MIDAS логотип">
+            </a>
+            <nav class="header-nav"  id="mainNav">
+                <ul class="header-list list-reset">
+                    <li class="header-list-item"><a href="#">АКЦИИ <span class="promo-fire">🔥</span></a></li>
+                    <li class="header-list-item"><a href="#">ГОРЯЧЕЕ <span class="arrow-down">▾</span></a></li>
+                    <li class="header-list-item"><a href="#">ХОЛОДНОЕ <span class="arrow-down">▾</span></a></li>
+                    <li class="header-list-item"><a href="#">СВЕЖАЯ ВЫПЕЧКА</a></li>
+                    <li class="header-list-item"><a href="#">ДЕСЕРТЫ</a></li>
+                    <li class="header-list-item"><a href="#">НАПИТКИ</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="header-icon-link"><img src="img/Лупа.svg" alt="Поиск"></a>
+                <a href="#" class="header-icon-link"><img src="img/Vector.svg" alt="Профиль"></a>
+                <a href="#" class="header-icon-link"><img src="img/Корзина ч.Ка.svg" alt="Корзина"></a>
+            </div>
+            <div class="header-right-controls"> <!-- Обертка для иконок и бургера -->
+        
+        <button class="burger-menu-button" id="burgerButton" aria-label="Открыть меню" aria-expanded="false">
+            <span class="burger-menu-icon"></span>
+        </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-left">
+                    <div class="hero-text-block">
+                        <h1>Доставка готовой еды <br> из фермерских <br> продуктов!</h1>
+                        <img src="img/Белые точки.svg" class="hero-dots-small" alt="Декоративные точки">
+                        <div class="hero-contacts">
+                            <p>+7 (499) 841-67-29</p>
+                            <p class="hero-email">delivery@midas.rest</p>
+                        </div>
+                    </div>
+                    <div class="hero-teaser-dessert">
+                        <img src="img/image 12 (1).png" alt="Тирамису">
+                        <div class="teaser-dessert-info">
+                            <span class="teaser-dessert-name">Тирамису</span>
+                            <span class="teaser-dessert-weight">430 г</span>
+                            <div class="teaser-dessert-price-block">
+                                <span class="teaser-dessert-price">370 ₽</span>
+                                <button class="teaser-add-to-cart">
+                                    <img src="img/КАРЗИНА у зин.png" alt="В корзину">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <img src="img/Огоромное блюда.png" alt="Стейк из лосося с овощами" class="hero-main-image">
+                    <div class="hero-featured-dish">
+                        <h2>Стейк из лосося <br> с овощами</h2>
+                        <span class="featured-dish-weight">250 г</span>
+                        <p class="featured-dish-description">Нежный стейк дикого <br> лосося, пропитанный соком <br>и ароматом слегка <br> обжаренных фермерских <br> овощей</p>
+                        <div class="featured-dish-buy">
+                            <span class="featured-dish-price">1200 ₽</span>
+                            <button class="featured-add-to-cart">
+                                <img src="img/КАРЗИНА у зин.png" alt="В корзину">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="img/Огромные белые точки.png" class="hero-dots-large" alt="Декоративные точки">
+        </section>
+
+        <section class="popular-dishes">
+            <div class="container">
+                <h2 class="section-title">Популярные блюда</h2>
+                <div class="catalog-grid">
+                    <!-- Row 1 -->
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (1).png" alt="Хачапури по-аджарски">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хачапури по-аджарски</h3>
+                            <span class="food-weight">430 г</span>
+                            <p class="food-description">Хачапури "Лодочка" с начинкой из расплавленного сыра сулугуни, яйца и масла.</p>
+                            <div class="price-section">
+                                <span class="current-price">470 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (2).png" alt="Хинкали традиционные">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хинкали традиционные (6шт)</h3>
+                            <span class="food-weight">350 г</span>
+                            <p class="food-description">Пряные хинкали с начинкой из ароматной баранины со специями.</p>
+                            <div class="price-section">
+                                <span class="old-price">620 ₽</span>
+                                <span class="current-price">495 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (3).png" alt="Хинкали жаренные">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хинкали жаренные (6шт)</h3>
+                            <span class="food-weight">350 г</span>
+                            <p class="food-description">Пряные хинкали с начинкой из ароматной баранины со специями.</p>
+                            <div class="price-section">
+                                <span class="old-price">650 ₽</span>
+                                <span class="current-price">520 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (4).png" alt="Ланч низкокалорийный">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Ланч низкокалорийный</h3>
+                             <span class="food-weight">450 г</span>
+                            <p class="food-description">Греческий йогурт с ягодами, 3 хинкали традиционных, салат цезарь, пирожки с уткой, морс</p>
+                            <div class="price-section">
+                                <span class="old-price">1 435 ₽</span>
+                                <span class="current-price">1 148 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (5).png" alt="Хачапури по-мегрельски">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хачапури по-мегрельски</h3>
+                            <span class="food-weight">430 г</span>
+                            <p class="food-description">Невероятно ароматная лепешка с сыром сулугуни внутри и снаружи</p>
+                            <div class="price-section">
+                                <span class="current-price">490 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (6).png" alt="Котлета с картофелем">
+                            <div class="badge">3 ВИДА</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Котлета с картофелем по-деревенски</h3>
+                            <span class="food-weight">350 г</span>
+                            <p class="food-description">По семейному рецепту: нежнейшее рубленное мясо с экологически чистыми фермерскими...</p>
+                            <div class="price-section">
+                                <span class="price-range">410 – 430 ₽</span>
+                                <button class="add-to-cart type-button">3 ВИДА</button> <!-- Or keep cart icon if preferred -->
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Row 2 -->
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (7).png" alt="Хинкали традиционные">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хинкали традиционные (6шт)</h3>
+                             <span class="food-weight">350 г</span>
+                            <p class="food-description">Пряные хинкали с начинкой из ароматной баранины со специями.</p>
+                            <div class="price-section">
+                                <span class="old-price">620 ₽</span>
+                                <span class="current-price">495 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (8).png" alt="Хачапури по-мегрельски">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хачапури по-мегрельски</h3>
+                            <span class="food-weight">430 г</span>
+                            <p class="food-description">Невероятно ароматная лепешка с сыром сулугуни внутри и снаружи</p>
+                            <div class="price-section">
+                                <span class="current-price">490 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (9).png" alt="Хачапури по-аджарски">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хачапури по-аджарски</h3>
+                            <span class="food-weight">430 г</span>
+                            <p class="food-description">Хачапури "Лодочка" с начинкой из расплавленного сыра сулугуни, яйца и масла.</p>
+                            <div class="price-section">
+                                <span class="current-price">470 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (10).png" alt="Котлета с картофелем">
+                             <div class="badge">3 ВИДА</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Котлета с картофелем по-деревенски</h3>
+                            <span class="food-weight">350 г</span>
+                            <p class="food-description">По семейному рецепту: нежнейшее рубленное мясо с экологически чистыми фермерскими...</p>
+                            <div class="price-section">
+                               <span class="price-range">410 – 430 ₽</span>
+                               <button class="add-to-cart type-button">3 ВИДА</button> <!-- Or keep cart icon -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (11).png" alt="Хинкали жаренные">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Хинкали жаренные (6шт)</h3>
+                            <span class="food-weight">350 г</span>
+                            <p class="food-description">Пряные хинкали с начинкой из ароматной баранины со специями.</p>
+                            <div class="price-section">
+                                <span class="old-price">650 ₽</span>
+                                <span class="current-price">520 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="card-image">
+                            <img src="img/Mask Group (12).png" alt="Ланч низкокалорийный">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="food-title">Ланч низкокалорийный</h3>
+                            <span class="food-weight">450 г</span>
+                            <p class="food-description">Греческий йогурт с ягодами, 3 хинкали традиционных, салат цезарь, пирожки с уткой, морс</p>
+                            <div class="price-section">
+                                <span class="old-price">1 435 ₽</span>
+                                <span class="current-price">1 148 ₽</span>
+                                <button class="add-to-cart"><img src="img/КАРЗИНА у зин.png" alt="В корзину"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-carousel-section">
+            <div class="container">
+                <div class="menu-carousel-header">
+                    <h2 class="section-title">Меню</h2>
+                    <div class="carousel-arrows">
+                        <button class="gallery-arrow prev-arrow">
+                            <img src="img/Union (1).png" alt="Previous"> <!-- Replace with actual arrow icon -->
+                        </button>
+                        <button class="gallery-arrow next-arrow">
+                            <img src="img/Union (1).svg" alt="Next"> <!-- Replace with actual arrow icon -->
+                        </button>
+                    </div>
+                </div>
+                <div class="image-carousel-wrapper">
+                    <div class="image-carousel">
+                        <div class="carousel-item">
+                            <img src="img/actions.png" alt="Акции"> <!-- Placeholder: Replace with actual image from screenshot -->
+                            <p>АКЦИИ</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/Горячие блюда.png" alt="Горячие блюда">
+                            <p>Горячие блюда</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/Супы.png" alt="Супы">
+                            <p>Супы</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/Хинкали.png" alt="Хинкали">
+                            <p>Хинкали</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/Холодные закуски.png" alt="Холодные закуски">
+                            <p>Холодные закуски</p>
+                        </div>
+                         <div class="carousel-item">
+                            <img src="img/Салаты.png" alt="Салаты">
+                            <p>Салаты</p>
+                        </div>
+                        <!-- Add more items if needed to scroll -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-nav">
+                    <a href="#" class="footer-logo-link">
+                        <img src="img/MIDAs.svg" alt="MIDAS логотип">
+                    </a>
+                    <nav class="footer-nav">
+                        <ul class="footer-nav-list list-reset">
+                            <li><a href="#">Обратная связь</a></li>
+                            <li><a href="#">Доставка</a></li>
+                            <li><a href="#">Оплата</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-contacts-info">
+                    <a href="tel:+74998416729" class="footer-phone">+7 (499) 841-67-29</a>
+                    <a href="mailto:delivery@midas.rest" class="footer-email">delivery@midas.rest</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2009-2019, OOO «MIDAS», официальный сайт</p>
+                <div class="footer-legal-links">
+                    <a href="#">Политика конфиденциальности и оферта</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
